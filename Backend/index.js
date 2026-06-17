@@ -37,6 +37,11 @@ app.use(cors({
 }));
 app.use(cookieParser());
 app.use(express.json());
+
+app.get("/", (req, res) => {
+  res.json({ status: true, message: "Video Meet API is running" });
+});
+
 app.use("/", authRoute);
 
 // ── Socket.IO ─────────────────────────────────────────────────────────────────
