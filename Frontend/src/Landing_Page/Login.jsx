@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { API_URL } from "../config";
 
 export default function Login() {
 
@@ -35,7 +36,7 @@ export default function Login() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/login",
+        `${API_URL}/login`,
         inputValue,
         { withCredentials: true }
       );

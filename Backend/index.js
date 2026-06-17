@@ -11,6 +11,11 @@ const { PORT, MONGO_URL } = process.env;
 
 const app = express();
 const server = http.createServer(app);
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://video-meet-f.onrender.com",
+  process.env.FRONTEND_URL,
+].filter(Boolean);
 
 // ── DB ────────────────────────────────────────────────────────────────────────
 mongoose
@@ -26,7 +31,7 @@ mongoose
 
 // ── Middleware ────────────────────────────────────────────────────────────────
 app.use(cors({
-  origin: ["http://localhost:5173"],
+  origin: allowedOrigins,
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true,
 }));
@@ -36,7 +41,11 @@ app.use("/", authRoute);
 
 // ── Socket.IO ─────────────────────────────────────────────────────────────────
 const io = new Server(server, {
-  cors: { origin: "http://localhost:5173", methods: ["GET", "POST"] },
+  cors: {
+    origin: allowedOrigins,
+    methods: ["GET", "POST"],
+    credentials: true,
+  },
 });
 
 // In-memory participant tracking

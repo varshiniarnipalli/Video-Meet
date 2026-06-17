@@ -6,8 +6,7 @@ import { toast } from "react-toastify";
 
 import DashboardLayout from "./DashboardLayout";
 import "./Dashboard.css";
-
-const API = "http://localhost:4000";
+import { API_URL } from "../config";
 
 const DEFAULT_STATS = [
   { value: "0",  label: "Meetings Hosted", icon: "fa-video-camera", tone: "blue"  },
@@ -28,7 +27,7 @@ const Dashboard = () => {
     if (!cookies.token) { navigate("/login"); return; }
 
     axios
-      .post(`${API}/dashboard`, {}, { withCredentials: true })
+      .post(`${API_URL}/dashboard`, {}, { withCredentials: true })
       .then(({ data }) => {
         if (data.status) {
           setUsername(data.user);
@@ -49,7 +48,7 @@ const Dashboard = () => {
     if (!username) return;
 
     axios
-      .get(`${API}/dashboard-stats/${username}`)
+      .get(`${API_URL}/dashboard-stats/${username}`)
       .then(({ data }) => {
         setStats([
           { value: data.hosted,            label: "Meetings Hosted", icon: "fa-video-camera", tone: "blue"  },
@@ -64,7 +63,7 @@ const Dashboard = () => {
     if (!username) return;
 
     axios
-      .get(`${API}/meetings/${username}`)
+      .get(`${API_URL}/meetings/${username}`)
       .then(({ data }) => {
         const all = data.meetings || [];
         // Only show meetings where the user was actually involved

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { API_URL } from "../config";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -35,7 +36,7 @@ export default function Signup() {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/signup",
+        `${API_URL}/signup`,
         inputValue,
         { withCredentials: true }
       );
