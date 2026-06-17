@@ -5,7 +5,6 @@ import axios from "axios";
 
 import DashboardLayout from "./DashboardLayout";
 import "./Meetings.css";
-import { API_URL } from "../config";
 
 const Meetings = () => {
   const navigate = useNavigate();
@@ -27,7 +26,7 @@ const Meetings = () => {
         }
 
         const { data } = await axios.post(
-          `${API_URL}/dashboard`,
+          "http://localhost:4000/dashboard",
           {},
           {
             withCredentials: true,
@@ -56,7 +55,7 @@ const Meetings = () => {
     if (!username) return;
 
     axios
-      .get(`${API_URL}/meetings/${username}`)
+      .get(`http://localhost:4000/meetings/${username}`)
       .then(({ data }) => {
         setMeetings(data.meetings || []);
         setLoading(false);
