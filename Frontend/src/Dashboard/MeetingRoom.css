@@ -1,0 +1,619 @@
+.room {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+/* Header */
+.room-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 22px;
+  background: #111c34;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.08);
+}
+
+.room-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.room-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.room-brand i {
+  color: #2563eb;
+}
+
+.room-divider {
+  width: 1px;
+  height: 26px;
+  background: rgba(226, 232, 240, 0.15);
+}
+
+.room-meta {
+  min-width: 0;
+}
+
+.room-meta h1 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.room-id {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 2px;
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: 12px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.room-id:hover {
+  color: #2563eb;
+}
+
+.room-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.rec-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  animation: pulse 1.5s ease infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Body */
+.room-body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  gap: 14px;
+  padding: 16px;
+}
+
+.stage {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+/* Main speaker */
+.main-speaker {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 50% 40%, #1e293b, #0b1322);
+  border: 1px solid rgba(226, 232, 240, 0.08);
+  overflow: hidden;
+}
+
+.avatar-xl {
+  display: grid;
+  place-items: center;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  font-size: 48px;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.speaking-ring {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 3px solid rgba(34, 197, 94, 0.6);
+  animation: ring 1.8s ease-out infinite;
+}
+
+@keyframes ring {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+.speaker-name {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 14px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(6px);
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  z-index: 2;
+}
+
+.speaker-name i {
+  color: #22c55e;
+}
+
+/* Thumbnails */
+.thumb-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.thumb {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 96px;
+  border-radius: 13px;
+  background: #1e293b;
+  border: 1px solid rgba(226, 232, 240, 0.08);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.thumb:hover {
+  transform: translateY(-2px);
+  border-color: rgba(37, 99, 235, 0.5);
+}
+
+.avatar-md {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #334155;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.thumb-name {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+.thumb-mic {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+  background: rgba(34, 197, 94, 0.2);
+  color: #22c55e;
+  font-size: 11px;
+}
+
+.thumb-mic.muted {
+  background: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+/* Side panel */
+.side-panel {
+  width: 320px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  border-radius: 16px;
+  background: #fff;
+  color: #1e293b;
+  overflow: hidden;
+  animation: slide-in 0.25s ease;
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.panel-head h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.panel-close {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #64748b;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.panel-close:hover {
+  background: #e2e8f0;
+}
+
+/* Chat */
+.chat-messages {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px;
+  overflow-y: auto;
+}
+
+.chat-msg {
+  max-width: 85%;
+}
+
+.chat-msg.self {
+  align-self: flex-end;
+  text-align: right;
+}
+
+.chat-msg-head {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.chat-msg.self .chat-msg-head {
+  justify-content: flex-end;
+}
+
+.chat-author {
+  font-size: 12px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.chat-time {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.chat-msg p {
+  margin: 0;
+  display: inline-block;
+  padding: 9px 13px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  font-size: 13px;
+  line-height: 1.45;
+  color: #1e293b;
+}
+
+.chat-msg.self p {
+  background: #2563eb;
+  color: #fff;
+}
+
+.chat-input {
+  display: flex;
+  gap: 8px;
+  padding: 14px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.chat-input input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 14px;
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chat-input input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.chat-input button {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 11px;
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.chat-input button:hover {
+  background: #1d4ed8;
+}
+
+/* People list */
+.people-list {
+  list-style: none;
+  margin: 0;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.people-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 11px;
+  transition: background 0.2s ease;
+}
+
+.people-list li:hover {
+  background: #f8fafc;
+}
+
+.avatar-sm {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.people-name {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.host-tag {
+  padding: 2px 8px;
+  border-radius: 6px;
+  background: #eff4ff;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.people-list i {
+  color: #22c55e;
+}
+
+.people-list i.muted {
+  color: #ef4444;
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 16px;
+  background: #111c34;
+  border-top: 1px solid rgba(226, 232, 240, 0.08);
+}
+
+.controls-group {
+  display: flex;
+  gap: 12px;
+}
+
+.ctrl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  min-width: 70px;
+  padding: 9px 14px;
+  border: none;
+  border-radius: 13px;
+  background: #1e293b;
+  color: #e2e8f0;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease, color 0.2s ease;
+}
+
+.ctrl i {
+  font-size: 18px;
+}
+
+.ctrl:hover {
+  background: #334155;
+  transform: translateY(-2px);
+}
+
+.ctrl.active {
+  background: #2563eb;
+  color: #fff;
+}
+
+.ctrl.off {
+  background: rgba(239, 68, 68, 0.18);
+  color: #f87171;
+}
+
+.ctrl.leave {
+  background: #ef4444;
+  color: #fff;
+}
+
+.ctrl.leave i {
+  transform: rotate(135deg);
+}
+
+.ctrl.leave:hover {
+  background: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .room-body {
+    flex-direction: column;
+  }
+
+  .side-panel {
+    width: 100%;
+    height: 260px;
+  }
+
+  .ctrl span {
+    display: none;
+  }
+
+  .ctrl {
+    min-width: 0;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .controls {
+    gap: 12px;
+  }
+}
+
+/* ── Add these to the bottom of your existing MeetingRoom.css ── */
+
+/* Main stage video */
+.main-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+
+/* Camera-off overlay sits on top of the video */
+.video-off-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 12px;
+  z-index: 2;
+}
+
+/* Thumbnail video in the strip */
+.thumb {
+  position: relative;
+}
+
+.thumb-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Fallback avatar shown behind the video — hidden when video loads */
+.thumb-avatar-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+
+/* Hide fallback once video has content */
+.thumb-video:not([srcObject=""]) ~ .thumb-avatar-fallback {
+  display: none;
+}
+
+.remote-audio-bank {
+  display: none;
+}

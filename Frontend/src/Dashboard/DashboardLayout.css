@@ -1,0 +1,42 @@
+.topbar-action {
+  margin-left: auto;
+}
+
+.topbar-action + .topbar-avatar {
+  margin-left: 16px;
+}
+
+.page-body {
+  animation: rise 0.4s ease;
+}
+
+/* Generic section header reused across pages */
+.page-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.page-head h1 {
+  margin: 0 0 4px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.page-head p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--vm-muted);
+}
+
+/* Reusable surface card */
+.surface {
+  background: #fff;
+  border: 1px solid var(--vm-border);
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}

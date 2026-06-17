@@ -1,0 +1,50 @@
+.custom-navbar {
+  background-color: #F8FAFC;
+  padding: 14px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.navbar-brand {
+  color: #1E293B !important;
+  font-size: 1.4rem;
+}
+
+.video-icon {
+  color: #2563EB;
+  font-size: 1.3rem;
+}
+
+.nav-link {
+  color: #1E293B !important;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #2563EB !important;
+}
+
+.btn-login {
+  border: 1px solid #2563EB;
+  color: #2563EB;
+  font-weight: 600;
+  padding: 8px 18px;
+}
+
+.btn-login:hover {
+  background-color: #2563EB;
+  color: white;
+}
+
+.btn-signup {
+  background-color: #2563EB;
+  color: white;
+  font-weight: 600;
+  padding: 8px 18px;
+}
+
+.btn-signup:hover {
+  background-color: #1d4ed8;
+  color: white;
+}

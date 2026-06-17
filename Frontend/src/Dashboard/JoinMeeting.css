@@ -1,0 +1,234 @@
+.join-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 24px;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.12), transparent 45%),
+    radial-gradient(circle at 80% 80%, rgba(34, 197, 94, 0.1), transparent 45%),
+    #f8fafc;
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: #1e293b;
+}
+
+.join-card {
+  width: 100%;
+  max-width: 440px;
+  padding: 38px 34px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.1);
+  text-align: center;
+  animation: rise 0.4s ease;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.join-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 26px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+  text-decoration: none;
+}
+
+.logo-badge {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  font-size: 16px;
+}
+
+.join-card h1 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.join-sub {
+  margin: 0 0 26px;
+  font-size: 14px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+/* Input field */
+.join-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  height: 52px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 13px;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.join-field i.fa-hashtag {
+  color: #94a3b8;
+}
+
+.join-field input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  background: transparent;
+  color: #1e293b;
+}
+
+.join-field:focus-within {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.14);
+}
+
+.join-field.is-valid {
+  border-color: #22c55e;
+}
+
+.join-field.is-valid:focus-within {
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.14);
+}
+
+.join-field.has-error {
+  border-color: #ef4444;
+}
+
+.valid-icon {
+  color: #22c55e;
+}
+
+.join-error {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 10px 2px 0;
+  font-size: 13px;
+  color: #ef4444;
+  text-align: left;
+  animation: fade-in 0.2s ease;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Join button */
+.join-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  height: 52px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 13px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.join-btn:hover:not(:disabled) {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 99, 235, 0.32);
+}
+
+.join-btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+/* Divider */
+.join-divider {
+  position: relative;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.join-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.join-divider span {
+  position: relative;
+  padding: 0 12px;
+  background: #fff;
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.join-create {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 48px;
+  border: 1.5px solid #2563eb;
+  border-radius: 13px;
+  background: transparent;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.join-create:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+.join-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 22px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.join-back:hover {
+  color: #2563eb;
+}

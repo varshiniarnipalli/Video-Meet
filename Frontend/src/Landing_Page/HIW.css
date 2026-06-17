@@ -1,0 +1,68 @@
+.hiw-section {
+  padding: 100px 20px;
+  background-color: #F8FAFC;
+}
+
+.hiw-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1E293B;
+  margin-bottom: 15px;
+}
+
+.hiw-subtitle {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  color: #64748B;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+.hiw-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.hiw-card {
+  background: white;
+  border-radius: 20px;
+  padding: 35px;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.hiw-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.12);
+}
+
+.step-number {
+  width: 70px;
+  height: 70px;
+  background: #2563EB;
+  color: white;
+  border-radius: 50%;
+  margin: 0 auto 25px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.hiw-card h4 {
+  color: #1E293B;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.hiw-card p {
+  color: #64748B;
+  line-height: 1.7;
+}
